@@ -14,7 +14,7 @@ jobs:
         with:
           java-version: 14
       - name: Build with Maven
-        run: export QUARKUS_PROFILE=test
+        run: export QUARKUS_PROFILE=test & mvn clean compile install
       - name: Cache local Maven repository
         uses: actions/cache@v2
         with:
@@ -22,3 +22,4 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+
