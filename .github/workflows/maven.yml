@@ -24,13 +24,12 @@ jobs:
             ${{ runner.os }}-maven-
       - name: Copy file jar to server
         uses: appleboy/scp-action@deploy
-        env:
-          HOST: ${{ secrets.HOST }}
-          USERNAME: ${{ secrets.USERNAME }}
-          PORT: ${{ secrets.PORT }}
-          KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
-          with:
-            source: target/console-1.0-SNAPSHOT.jar
-            target: /api/
+        with:
+            local: target/console-1.0-SNAPSHOT.jar
+            remote: /api/
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            port: ${{ secrets.PORT }}
+            key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
 
 
