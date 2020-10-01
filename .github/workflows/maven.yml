@@ -26,7 +26,7 @@ jobs:
         uses: appleboy/scp-action@master
         with:
             source: target/console-1.0-SNAPSHOT.jar
-            target: /api/
+            target: /home/ubuntu/api/
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USERNAME }}
             #port: ${{ secrets.PORT }}
