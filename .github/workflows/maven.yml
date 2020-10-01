@@ -29,7 +29,7 @@ jobs:
             target: /api/
             host: ${{ secrets.HOST }}
             username: ${{ secrets.USERNAME }}
-            port: ${{ secrets.PORT }}
+            #port: ${{ secrets.PORT }}
             key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
 
 
