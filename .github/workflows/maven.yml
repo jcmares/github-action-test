@@ -30,7 +30,7 @@ jobs:
           PORT: ${{ secrets.PORT }}
           KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
           with:
-            source: "./console-1.0-SNAPSHOT.jar"
+            source: "./target/console-1.0-SNAPSHOT.jar"
             target: "/api/"
 
 
