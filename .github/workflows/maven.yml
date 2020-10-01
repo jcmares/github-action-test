@@ -22,4 +22,15 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+      - name: Copy file via scp
+        uses: appleboy/scp-action@deploy
+        env:
+          HOST: ${{ secrets.HOST }}
+          USERNAME: ${{ secrets.USERNAME }}
+          PORT: ${{ secrets.PORT }}
+          KEY: ${{ secrets.SSH_DEPLOYMENT_KEY }}
+          with:
+            source: "./console-1.0-SNAPSHOT.jar"
+            target: "/api/"
+
 
