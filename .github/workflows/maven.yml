@@ -23,7 +23,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Copy file jar to server
-        uses: appleboy/scp-action@deploy
+        uses: appleboy/scp-action@master
         with:
             local: target/console-1.0-SNAPSHOT.jar
             remote: /api/
