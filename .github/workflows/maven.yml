@@ -40,3 +40,11 @@ jobs:
             username: ${{ secrets.USERNAME }}
             port: ${{ secrets.PORT }}
             key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
+      - name: Restart supervisor
+        uses: appleboy/ssh-action@master
+        with:
+            command: sudo service supervisor stop
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            port: ${{ secrets.PORT }}
+            key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
