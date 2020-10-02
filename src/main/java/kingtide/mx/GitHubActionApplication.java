@@ -1,3 +1,5 @@
+package kingtide.mx;
+
 import org.eclipse.microprofile.openapi.annotations.Components;
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Info;
