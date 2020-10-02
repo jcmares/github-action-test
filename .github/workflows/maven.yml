@@ -48,4 +48,4 @@ jobs:
             port: ${{ secrets.PORT }}
             key: ${{ secrets.SSH_DEPLOYMENT_KEY }}
             script: |
-                sudo service supervisor stop
+                sudo service supervisor restart
