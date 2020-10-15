@@ -22,5 +22,5 @@ jobs:
             ${{ runner.os }}-maven-
       - name: automerge
         uses: pascalgn/automerge-action@v0.12.0
-        with:
-          github_token: ${{ secrets.GIT_HUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_HUB_TOKEN }}
