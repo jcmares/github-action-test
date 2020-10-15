@@ -1,7 +1,7 @@
 package kingtide.mx;
 
 import io.vertx.core.json.JsonObject;
-import kingtide.mx.Service;
+
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
@@ -40,6 +40,26 @@ public class Worker {
 
 
         String response = service.searchProduct(brand, "y", key );
+
+        JsonObject json = new JsonObject(response);
+
+        return Response.ok(json).build();
+    }
+
+    @GET
+    @Tag(name = "demo")
+    @Path("/hello-world/{name}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    @Operation(summary = "Get information about the barcode using one of the providers")
+    @APIResponses(value = {
+            @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
+            @APIResponse(responseCode = "400", content = @Content(mediaType = MediaType.TEXT_PLAIN), description = "Invalid barcode")
+    })
+    public Response helloWorld(@PathParam("name") String name)  {
+
+
+        String response = "{ \"success\": \"true\" , \"data\" : \"hello "+ name +"\"}";
 
         JsonObject json = new JsonObject(response);
 
