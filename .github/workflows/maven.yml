@@ -20,10 +20,10 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-  automerge:
-    runs-on: ubuntu-latest
-    steps:
+
       - name: automerge
         uses: pascalgn/automerge-action@v0.12.0
         env:
           GITHUB_TOKEN: ${{ secrets.GIT_HUB_TOKEN }}
+          MERGE_LABELS: automerge
+          MERGE_METHOD: merge
