@@ -56,7 +56,7 @@ public class Worker {
             @APIResponse(responseCode = "200", content = @Content(mediaType = MediaType.APPLICATION_JSON)),
             @APIResponse(responseCode = "400", content = @Content(mediaType = MediaType.TEXT_PLAIN), description = "Invalid barcode")
     })
-    public Response helloWorld(@PathParam("name") String name)  {
+    public Response holaMundo(@PathParam("name") String name)  {
 
 
         String response = "{ \"success\": \"true\" , \"data\" : \"hello "+ name +"\"}";
