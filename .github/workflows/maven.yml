@@ -20,6 +20,8 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
+  automerge:
+    steps:
       - name: automerge
         uses: pascalgn/automerge-action@v0.12.0
         env:
